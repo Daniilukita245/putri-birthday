@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Putri 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#ffd6e8,#ffeaf4,#fff5fa);
+  font-family: 'Playfair Display', serif;
+  overflow: hidden;
+}
+
+/* floating flower */
+.flower {
+  position: fixed;
+  top: -20px;
+  font-size: 20px;
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+#book {
+  width: 360px;
+  height: 540px;
+}
+
+.page {
+  background: #fff9fc;
+  border-radius: 25px;
+  padding: 25px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  border: 5px solid #ffcce6;
+  position: relative;
+}
+
+/* decorative tape */
+.tape {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background: rgba(255,255,255,0.7);
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-6deg);
+  border-radius: 8px;
+}
+
+/* polaroid style */
+.photo-frame {
+  background: white;
+  padding: 10px 10px 25px 10px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  margin-top: 40px;
+}
+
+.photo-frame img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-size: 32px;
+  color: #d63384;
+  margin-top: 40px;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+  color: #7a3e5e;
+  line-height: 1.7;
+  font-size: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+setInterval(() => {
+  const flower = document.createElement("div");
+  flower.classList.add("flower");
+  flower.innerHTML = "🌸";
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration = (Math.random() * 3 + 4) + "s";
+  document.body.appendChild(flower);
+  setTimeout(() => flower.remove(), 7000);
+}, 500);
+</script>
+
+<div id="book">
+
+  <div class="page">
+    <div class="tape"></div>
+    <h1>Happy 20th Birthday 🎀</h1>
+    <div class="photo-frame">
+      <img src="foto1.jpg">
+    </div>
+    <p>Putri Army Febriana 🤍  
+    17 Februari — hari lahir perempuan paling indah di hidupku.</p>
+  </div>
+
+  <div class="page">
+    <div class="tape"></div>
+    <div class="photo-frame">
+      <img src="foto2.jpg">
+    </div>
+    <p>Aku bangga banget sama perjalanan kamu sampai di umur 20 ini.  
+    Kamu tumbuh jadi perempuan yang kuat dan penuh cinta ✨</p>
+  </div>
+
+  <div class="page">
+    <div class="tape"></div>
+    <div class="photo-frame">
+      <img src="foto3.jpg">
+    </div>
+    <p>Semoga semua doa baik datang satu per satu.  
+    Rezeki, bahagia, dan semua hal yang kamu impikan 💕</p>
+  </div>
+
+  <div class="page">
+    <div class="tape"></div>
+    <div class="photo-frame">
+      <img src="foto4.jpg">
+    </div>
+    <p>Terima kasih sudah jadi tempat paling nyaman,  
+    dan alasan aku selalu tersenyum 🤍</p>
+  </div>
+
+  <div class="page">
+    <div class="tape"></div>
+    <div class="photo-frame">
+      <img src="foto5.jpg">
+    </div>
+    <p>Semoga rasa sayang ini nggak pernah berubah.  
+    I love you, today and always ✨</p>
+  </div>
+
+</div>
+
+<script>
+const pageFlip = new St.PageFlip(document.getElementById("book"), {
+  width: 360,
+  height: 540,
+  size: "fixed",
+  showCover: true,
+  mobileScrollSupport: false,
+  flippingTime: 1000
+});
+
+pageFlip.loadFromHTML(document.querySelectorAll(".page"));
+</script>
+
+</body>
+</html>
